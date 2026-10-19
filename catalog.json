@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "solutions": [
+    {
+      "id": "electromagnetic-field-profile-and-energy-accumulat-f506322a",
+      "title": "Electromagnetic Field Profile and Energy Accumulation in Cholesteric Liquid Crystals",
+      "category": "liquid-crystals-optics",
+      "source_url": "https://play.bohrium.com/challenge/electromagnetic-field-profile-and-energy-accumulat-f506322a",
+      "listed_status": "open",
+      "status": "planned",
+      "solution_path": null,
+      "attempt_id": null,
+      "final_score": null
+    },
+    {
+      "id": "liquid-crystal-cell-filling-time-simulation-6a87bbdd",
+      "title": "Liquid Crystal Cell Filling Time Simulation",
+      "category": "liquid-crystals-optics",
+      "source_url": "https://play.bohrium.com/challenge/liquid-crystal-cell-filling-time-simulation-6a87bbdd",
+      "listed_status": "open",
+      "status": "planned",
+      "solution_path": null,
+      "attempt_id": null,
+      "final_score": null
+    },
+    {
+      "id": "uniaxial-viscoelastic-polymer-response-simulation-00c4363d",
+      "title": "Uniaxial Viscoelastic Polymer Response Simulation",
+      "category": "polymers-mechanics",
+      "source_url": "https://play.bohrium.com/challenge/uniaxial-viscoelastic-polymer-response-simulation-00c4363d",
+      "listed_status": "open",
+      "status": "planned",
+      "solution_path": null,
+      "attempt_id": null,
+      "final_score": null
+    },
+    {
+      "id": "compute-spinodal-temperatures-and-ucst-critical-mi-628b34e4",
+      "title": "Compute Spinodal Temperatures and UCST Critical Minimum for a Polymer Solution Model",
+      "category": "polymers-mechanics",
+      "source_url": "https://play.bohrium.com/challenge/compute-spinodal-temperatures-and-ucst-critical-mi-628b34e4",
+      "listed_status": "open",
+      "status": "planned",
+      "solution_path": null,
+      "attempt_id": null,
+      "final_score": null
+    }
+  ]
+}

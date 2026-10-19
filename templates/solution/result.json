@@ -1,0 +1,17 @@
+{
+  "challenge_id": null,
+  "status": "planned",
+  "environment": null,
+  "seed": null,
+  "commands": [],
+  "metrics": {},
+  "validation": [],
+  "platform": {
+    "attempt_id": null,
+    "status": "not-submitted",
+    "final_score": null,
+    "verified_at": null
+  },
+  "limitations": [],
+  "third_party_licenses": []
+}
