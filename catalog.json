@@ -9,9 +9,9 @@
       "category": "liquid-crystals-optics",
       "source_url": "https://play.bohrium.com/challenge/f-rster-resonance-energy-transfer-efficiency-calcu-4fff2cf6",
       "listed_status": "open",
-      "status": "local-validated",
+      "status": "submitted",
       "solution_path": null,
-      "attempt_id": null,
+      "attempt_id": "57926",
       "final_score": null,
       "recommended_order": 1,
       "statement_reviewed_on": "2026-10-20",
@@ -21,7 +21,11 @@
         "logs/host-independent-check.json",
         "logs/reproducibility.json",
         "logs/trace-validation.json"
-      ]
+      ],
+      "platform_status": "queued",
+      "model": "gpt-6-astra",
+      "harness": "codex",
+      "last_status_checked_at": "2026-10-20T00:59:38.610415+00:00"
     },
     {
       "id": "distance-dependent-fluorescence-quenching-model-fi-536026a1",
