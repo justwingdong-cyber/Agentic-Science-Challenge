@@ -2,7 +2,17 @@
 
 面向材料科学与 AI for Science 的题解、计算复现和经验总结。维护者：[@justwingdong-cyber](https://github.com/justwingdong-cyber)。
 
-本仓库记录真实执行过程，区分计划、实现、本地验证与平台评分。当前为项目初始化阶段，**已完成题解：0**；下列条目是待开始的候选题，不代表已复现或已提交。
+本仓库记录真实执行过程，区分计划、实现、本地验证与平台评分。当前 **1 道题已通过本地独立数值验证，平台提交数为 0**；其余候选题仍待开始。
+
+## 最简 Agent
+
+已提供基于本机 Codex CLI 的可执行入口，详见 [运行说明](docs/MINIMAL-AGENT.md)：
+
+```powershell
+python scripts/asc_agent.py run --challenge-id f-rster-resonance-energy-transfer-efficiency-calcu-4fff2cf6
+```
+
+它读取公开题面、执行模型和解题脚本、保存真实轨迹与日志并校验输出契约。模型沿用本机 Codex 配置；当前入口不执行平台提交。
 
 ## 分类
 
@@ -16,11 +26,11 @@
 
 ## 首批候选题
 
-以下中文为便于阅读的译名；题目正式标题、ID 与来源保存在 [catalog.json](catalog.json)。已根据公开题面重新按入门难度排序，详见 [选题清单与首题风险](docs/CHALLENGE-SHORTLIST.md)。这是选题审核，尚未完成计算或提交。
+以下中文为便于阅读的译名；题目正式标题、ID 与来源保存在 [catalog.json](catalog.json)。排序依据与风险见 [选题清单](docs/CHALLENGE-SHORTLIST.md)，首题真实执行情况见 [Agent 验收记录](docs/MINIMAL-AGENT.md)。
 
 | 题目 | 分类 | 状态 |
 |---|---|---|
-| FRET 效率与寿命计算 | 液晶与光学 | 题包已下载，待开始 |
+| FRET 效率与寿命计算 | 液晶与光学 | 本地独立验证通过，未提交 |
 | 距离依赖的荧光猝灭拟合 | 液晶与光学 | 待开始 |
 | FRET 相对荧光产率计算 | 液晶与光学 | 待开始 |
 | 聚合物溶液旋节温度与 UCST 临界点计算 | 聚合物与力学 | 待开始 |
