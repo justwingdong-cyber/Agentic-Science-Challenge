@@ -18,10 +18,39 @@
 
 ```bash
 challenge_id="实际题目ID"
-mkdir -p "asc-work/$challenge_id"
+mkdir -p "asc-work/$challenge_id"/{task,scripts,outputs,traces,logs,bohr-result}
 cd "asc-work/$challenge_id"
 playground task download --challenge-id "$challenge_id" --out task
 ```
+
+每题标准工作目录：
+
+```text
+asc-work/<challenge_id>/
+  task/
+  scripts/
+  outputs/
+  traces/
+  logs/
+  bohr-result/
+  result_summary.md
+  submission.json
+  status.json
+```
+
+| 路径 | 用途 |
+|---|---|
+| `task/` | CLI 下载的原始题包、题面与资源 |
+| `scripts/` | 解题、数据处理、计算与验证脚本 |
+| `outputs/` | 按题目要求准备的提交产物；不要把整套工作目录作为提交输出 |
+| `traces/` | 真实原生 agent 轨迹；记录来源，不伪造或用普通日志替代 |
+| `logs/` | 下载、计算、验证、审核与提交操作日志 |
+| `bohr-result/` | 从 Bohrium 下载的计算结果，核验后再整理到 outputs |
+| `result_summary.md` | 方法、运行环境、实际结果、验证与局限摘要 |
+| `submission.json` | 本地提交记录：初始化为未提交，实际提交后记录真实 attempt ID 和响应；其自身不替代平台要求的提交清单 |
+| `status.json` | 本地任务进度与最新查询到的平台状态，包含查询时间；最终分数未知时为 null |
+
+建档时创建上述文件和目录。未执行步骤明确标记未运行，未提交时 attempt ID 和最终分数为 null；后续依据真实命令响应更新。题目对 outputs 内文件的具体格式和命名有要求时，以题面为准。
 
 Agent 身份运行前，将 `PLAYGROUND_CREDENTIALS_PATH` 指向本机私有凭据文件。`asc-work/` 是忽略的本地工作区；经核验并适合公开的原创代码、题解和复现说明整理到 `solutions/<category>/<challenge_id>/`。
 
