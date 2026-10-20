@@ -5,6 +5,7 @@
 - 用户已授权将本项目原创题解分类整理并开源到其 GitHub；完成内容审查后可正常提交和推送，无需每题重复询问发布意愿。
 - 默认目标仓库：justwingdong-cyber/Agentic-Science-Challenge。首次推送前核实远端确实属于该用户。
 - 按 README 分类，一题一目录，目录名用真实 challenge ID。
+- 每题本地工作目录固定为 `asc-work/<challenge_id>/`，进入该目录后运行 `playground task download --challenge-id <challenge_id> --out task`。题包位于 `task/`；使用真实 ID，不创建字面占位符目录。整个 asc-work 工作区忽略提交，核验后的原创题解整理到 solutions 分类目录。
 - 先读题面、数据协议、评分与预期产物，再实现；以真实计算忠实复现，不编造结果、评分、轨迹或已通过的检查。
 - catalog.json 的状态使用 planned / in-progress / local-validated / submitted / scored / failed；评分未知时填 null。
 - 正式题解包含方法、环境、执行命令、验证、结果、失败与局限。公开摘要可删去私人信息，提交比赛的原生轨迹须真实保存且满足平台要求。

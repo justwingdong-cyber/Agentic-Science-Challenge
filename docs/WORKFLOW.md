@@ -1,6 +1,6 @@
 # 题解与发布流程
 
-1. 获取题目：用 Playground CLI 下载真实题包至忽略目录 `downloads/<challenge-id>/`，核对任务说明、评分方式、预期产物与数据许可。不要依据标题猜测交付要求。
+1. 获取题目：每题单独建立 `asc-work/<challenge_id>/`，进入后用 `playground task download --challenge-id <challenge_id> --out task` 下载真实题包至 `task/`。核对任务说明、评分方式、预期产物与数据许可。不要依据标题猜测交付要求。
 2. 建档：在分类目录创建题解，复制 templates/solution 内容，填入真实题目 ID，并将 catalog 状态改为 in-progress。
    方案审核：调用 `grill-me`（当前转交 `grilling`），按依赖梳理任务与方法决定；先核查事实，解决真正未决的取舍，再开展依赖这些决定的实现。记录见 [审核模板](../templates/review.md)。
 3. 实现：建立最小基线、固定依赖版本与随机种子，再做必要的精度/收敛/守恒等检查。保留实际失败和修复记录。
@@ -13,5 +13,16 @@
    GitHub 发布前同样执行 `grill-me` 审核，针对公开文件和题解结论核验；可引用同一版本已完成的事实检查，但对新增或变更内容补审。
 
 平台要求原生轨迹，不得事后伪造轨迹。公开的解题过程摘要不替代正式提交轨迹。
+
+本地下载示例（在项目根目录的 Bash 中执行，将实际题目 ID 赋给变量）：
+
+```bash
+challenge_id="实际题目ID"
+mkdir -p "asc-work/$challenge_id"
+cd "asc-work/$challenge_id"
+playground task download --challenge-id "$challenge_id" --out task
+```
+
+Agent 身份运行前，将 `PLAYGROUND_CREDENTIALS_PATH` 指向本机私有凭据文件。`asc-work/` 是忽略的本地工作区；经核验并适合公开的原创代码、题解和复现说明整理到 `solutions/<category>/<challenge_id>/`。
 
 参考：Playground `GET /api/docs/compete-and-submit`，核对日期 2026-10-20。具体比赛是否仍在进行以比赛页为准，题目 open 状态不等于赛事报名仍开放。

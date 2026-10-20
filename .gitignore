@@ -16,6 +16,7 @@ sessions/
 *.jsonl
 
 # Downloaded source materials, datasets and large outputs
+asc-work/
 downloads/
 data/
 raw/
