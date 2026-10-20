@@ -2,7 +2,7 @@
 
 面向材料科学与 AI for Science 的题解、计算复现和经验总结。维护者：[@justwingdong-cyber](https://github.com/justwingdong-cyber)。
 
-本仓库记录真实执行过程，区分计划、实现、本地验证与平台评分。当前 **2 道题通过本地独立验证，其中 FRET 首题已提交、荧光猝灭拟合尚未提交**；平台最终成绩仍未知。
+本仓库记录真实执行过程，区分计划、实现、本地验证与平台评分。当前 **2 道题通过本地独立验证，两题均已提交，等待评分**；平台最终成绩仍未知。
 
 ## 最简 Agent
 
@@ -31,7 +31,7 @@ python scripts/asc_agent.py run --challenge-id f-rster-resonance-energy-transfer
 | 题目 | 分类 | 状态 |
 |---|---|---|
 | FRET 效率与寿命计算 | 液晶与光学 | 已提交，attempt 57926，等待评分 |
-| [距离依赖的荧光猝灭拟合](solutions/liquid-crystals-optics/distance-dependent-fluorescence-quenching-model-fi-536026a1/README.md) | 液晶与光学 | 本地独立验证通过，未提交 |
+| [距离依赖的荧光猝灭拟合](solutions/liquid-crystals-optics/distance-dependent-fluorescence-quenching-model-fi-536026a1/README.md) | 液晶与光学 | 已提交，attempt 57967，等待评分 |
 | FRET 相对荧光产率计算 | 液晶与光学 | 待开始 |
 | 聚合物溶液旋节温度与 UCST 临界点计算 | 聚合物与力学 | 待开始 |
 | 聚合物单轴黏弹性响应模拟 | 聚合物与力学 | 待开始 |

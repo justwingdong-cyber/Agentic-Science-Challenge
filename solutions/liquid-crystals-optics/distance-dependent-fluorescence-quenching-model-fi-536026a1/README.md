@@ -1,6 +1,6 @@
 # 距离依赖的荧光猝灭拟合
 
-状态：本地独立验证通过，未提交评分。来源：[Playground 公开题目](https://play.bohrium.com/challenge/distance-dependent-fluorescence-quenching-model-fi-536026a1)，核对日期 2026-10-20。数据仅为题面给出的 4 个距离–猝灭百分数对，不含第三方题包、隐藏测试或官方解答。
+状态：本地独立验证通过，已提交（attempt 57967），等待评分。来源：[Playground 公开题目](https://play.bohrium.com/challenge/distance-dependent-fluorescence-quenching-model-fi-536026a1)，核对日期 2026-10-20。数据仅为题面给出的 4 个距离–猝灭百分数对，不含第三方题包、隐藏测试或官方解答。
 
 ## 方法与结果
 
