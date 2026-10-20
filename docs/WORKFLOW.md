@@ -43,7 +43,7 @@ asc-work/<challenge_id>/
 | `task/` | CLI 下载的原始题包、题面与资源 |
 | `scripts/` | 解题、数据处理、计算与验证脚本 |
 | `outputs/` | 只放题目要求的最终答案和必要说明；禁止缓存、依赖包、密钥文件及无关大文件 |
-| `traces/` | 真实原生 agent 轨迹；记录来源，不伪造或用普通日志替代 |
+| `traces/` | 真实原生 agent 轨迹，统一路径 `traces/trace.jsonl`；记录来源，不伪造或用普通日志替代 |
 | `logs/` | 下载、计算、验证、审核与提交操作日志 |
 | `bohr-result/` | 从 Bohrium 下载的计算结果，核验后再整理到 outputs |
 | `result_summary.md` | 方法、运行环境、实际结果、验证与局限摘要 |
@@ -55,5 +55,29 @@ asc-work/<challenge_id>/
 提交前逐项核对 `outputs/` 的文件清单和大小，确保每个文件都对应题目要求或必要说明；不要将整套工作区、依赖环境、缓存、凭据或无关计算结果作为输出打包。
 
 Agent 身份运行前，将 `PLAYGROUND_CREDENTIALS_PATH` 指向本机私有凭据文件。`asc-work/` 是忽略的本地工作区；经核验并适合公开的原创代码、题解和复现说明整理到 `solutions/<category>/<challenge_id>/`。
+
+## 平台数据与远程资源
+
+依赖平台数据、计算或模型服务时先检查：
+
+```bash
+bohr version
+bohr doctor --output json
+playground data list --limit 20 --json
+```
+
+查看命令的实际响应与诊断字段，不能只根据退出码判断所有服务可用。题目声明数据集后，在该题工作目录运行（替换真实 ID 和版本）：
+
+```bash
+playground data pull --dataset <dataset_id> --version <version> --out data/
+```
+
+`data/` 为按需创建的本地输入目录，不属于最终提交输出。记录数据 ID、固定版本、来源和必要的完整性校验；不读取 hidden tests、checker 或官方 solution。
+
+- 小数据先本地运行，快速验证输入与输出格式。
+- 长时间计算使用 Bohrium 作业或沙盒；运行前核实资源、额度和计费渠道，并读取对应 Bohr skill。
+- 大模型、领域模型和内部推理服务按题目说明使用 Trisol；不凭工具名称猜测调用协议。
+- 所有远程 job ID、实际命令、stdout/stderr 记录到 `logs/`，在 `result_summary.md` 汇总运行与结果下载位置。需要返回敏感信息的认证命令不得直接重定向整段输出，日志先过滤凭据。
+- 轨迹统一使用真实原生 `traces/trace.jsonl`。不打印环境变量全集，不将 token、access key、密码、cookie 写入轨迹、日志或提交文件。
 
 参考：Playground `GET /api/docs/compete-and-submit`，核对日期 2026-10-20。具体比赛是否仍在进行以比赛页为准，题目 open 状态不等于赛事报名仍开放。
