@@ -136,4 +136,30 @@ playground submit \
 
 **当前版本限制（0.1.40）**：省略 `--trace` 时 CLI 尝试自动发现原生轨迹；找不到真实有效轨迹则拒绝创建新提交。这种简写并非无轨迹提交。没有真实轨迹时不伪造，也不宣称可以先提交 outputs 后补轨迹；保留已有产物，后续通过真实执行生成轨迹。升级后以当前帮助与实际验证为准。
 
-参考：本机 Playground 0.1.40 的 `submit --help`、轨迹校验和提交实现，以及 Playground `GET /api/docs/compete-and-submit`，核对日期 2026-10-20。具体比赛是否仍在进行以比赛页为准，题目 open 状态不等于赛事报名仍开放。
+## 查询评分与分层排错
+
+从 `submission.json` 的实际成功响应找到 `attempt_id`；若响应结构不同，先核对字段，不猜测 ID。没有成功提交或有效 ID 时不执行占位符查询。在对应题目目录运行：
+
+```bash
+set -o pipefail
+attempt_id="submission.json 中的实际 attempt_id"
+playground status --attempt-id "$attempt_id" \
+  2> logs/status.stderr.log | tee status.json
+playground status --attempt-id "$attempt_id" --bundle \
+  > logs/status-bundle.json 2> logs/status-bundle.stderr.log
+```
+
+每次查询记录查询时间、attempt ID、退出状态和原始平台状态；覆盖最新 status.json 前保留有用的历史响应。`--bundle` 是只读详情查询，不代表自动下载提交包。CLI 的状态查询不会自动下载或分享生成的 skill。
+
+| 平台状态 | 解释与处理 |
+|---|---|
+| `queued` / `running` | 排队或评测中，稍后查询，不重复提交 |
+| `scoring` | 后端评分中；已有细节也不视为最终得分 |
+| `scored` | 已产生终态得分，核对详情后同步 catalog 和 result_summary |
+| `failed` | 查看具体错误、日志和失败层，修复原因后再决定如何重试 |
+
+平台可能返回其他状态或分离的 attempt/bundle 状态，保留实际值并依据响应解释；不要将 unknown、provisional 或中间分数写成最终成绩。catalog 的任务进度与平台原始状态分别记录；最终分数未知时保留 null。
+
+失败时逐层定位：安装 → 认证 → 题目下载 → 输出格式 → 依赖 → 计算 → 提交包 → 评分器 → trace → 平台。顺序用于排查，不表示每种失败必须重跑所有阶段。记录错误消息、关键日志、request ID（如有）、修复措施和复核结果，禁止打印凭据或环境变量全集。确认是评分器或平台失败时保留证据，不把它解释为答案错误；上传重试沿用 CLI 指定的原 attempt ID，避免创建重复提交。
+
+参考：本机 Playground 0.1.40 的 `submit --help`、`status --help`、轨迹校验和提交实现，以及 Playground `GET /api/docs/compete-and-submit`，核对日期 2026-10-20。具体比赛是否仍在进行以比赛页为准，题目 open 状态不等于赛事报名仍开放。
