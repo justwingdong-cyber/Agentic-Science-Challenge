@@ -17,6 +17,7 @@
 - 依赖平台资源的题目先检查 `bohr version`、`bohr doctor --output json` 和 `playground data list --limit 20 --json`；数据集按题面指定的真实 ID 与版本下载到该题的 `data/`，固定版本并记录来源。
 - 小数据先本地验证输出格式；长时间计算放到 Bohrium 作业或沙盒；模型或内部推理服务按题目说明使用 Trisol，不猜测服务参数。远程 job ID、命令及经敏感信息检查的 stdout/stderr 保存至该题 logs/，并在 result_summary.md 汇总。
 - 真实原生轨迹使用该题 `traces/trace.jsonl`；禁止在轨迹、日志和提交产物中写入 token、access key、密码、cookie 或环境变量全集。诊断仅读取必要字段。
+- 提交时 --model 与 --harness 填实际模型和运行方式，不照抄示例、不猜测型号。优先显式指定 --trace traces/trace.jsonl，先验证轨迹和 dry-run，实际提交响应保存 submission.json、stderr 保存 logs/。Bash 使用 pipefail 保留提交失败状态。当前 CLI 0.1.40 缺少真实轨迹时拒绝新提交，省略 --trace 只是自动发现轨迹，不代表允许无轨迹提交。
 - 用户授权接入赛事算力环境。实际执行时先核实资源归属、额度和费用；没有选定题目时不启动计算资源。
 - 后续完成一道题时，同步分类索引、catalog.json、题解与可复现产物，并记录真实平台 attempt ID/最终分数（如有）。
 

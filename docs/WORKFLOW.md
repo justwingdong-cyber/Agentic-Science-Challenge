@@ -80,4 +80,60 @@ playground data pull --dataset <dataset_id> --version <version> --out data/
 - 所有远程 job ID、实际命令、stdout/stderr 记录到 `logs/`，在 `result_summary.md` 汇总运行与结果下载位置。需要返回敏感信息的认证命令不得直接重定向整段输出，日志先过滤凭据。
 - 轨迹统一使用真实原生 `traces/trace.jsonl`。不打印环境变量全集，不将 token、access key、密码、cookie 写入轨迹、日志或提交文件。
 
-参考：Playground `GET /api/docs/compete-and-submit`，核对日期 2026-10-20。具体比赛是否仍在进行以比赛页为准，题目 open 状态不等于赛事报名仍开放。
+## 提交命令与身份记录
+
+在对应题目工作目录运行，将变量替换为真实信息。`--model` 使用实际解题模型标识，`--harness` 使用实际运行方式（如 codex、bohrium-agent、harbor-lbg、manual、custom-agent）。只有确实人工完成时才填写 manual；不能照抄示例模型，也不能将未知型号当作已知。
+
+推荐显式提供真实轨迹：
+
+```bash
+set -o pipefail
+challenge_id="实际题目ID"
+model_name="实际模型标识"
+harness_name="实际运行方式"
+
+playground trace validate --trace traces/trace.jsonl \
+  > logs/trace-validation.json 2> logs/trace-validation.stderr.log
+```
+
+轨迹验证通过、grill-me 审核完成且 outputs 内容就绪后，再构建并检查提交预演；任一步失败都先处理，不能直接继续实际提交：
+
+```bash
+playground submit \
+  --challenge-id "$challenge_id" \
+  --outputs outputs \
+  --trace traces/trace.jsonl \
+  --model "$model_name" \
+  --harness "$harness_name" \
+  --dry-run \
+  > logs/submission-dry-run.json 2> logs/submission-dry-run.stderr.log
+```
+
+核对预演产物和结果后，实际提交：
+
+```bash
+playground submit \
+  --challenge-id "$challenge_id" \
+  --outputs outputs \
+  --trace traces/trace.jsonl \
+  --model "$model_name" \
+  --harness "$harness_name" \
+  2> logs/submission.stderr.log | tee submission.json
+```
+
+`set -o pipefail` 防止 tee 掩盖提交失败。保留提交退出状态，核对 submission.json 的实际响应并记录 attempt ID；不要仅凭文件存在判断成功。重试失败上传时遵循 CLI 返回的同一 attempt ID 重试指令，保留之前的响应与日志。
+
+不显式提供 trace 的简写形式为：
+
+```bash
+playground submit \
+  --challenge-id "$challenge_id" \
+  --outputs outputs \
+  --model "$model_name" \
+  --harness "$harness_name" \
+  2> logs/submission.stderr.log | tee submission.json
+```
+
+**当前版本限制（0.1.40）**：省略 `--trace` 时 CLI 尝试自动发现原生轨迹；找不到真实有效轨迹则拒绝创建新提交。这种简写并非无轨迹提交。没有真实轨迹时不伪造，也不宣称可以先提交 outputs 后补轨迹；保留已有产物，后续通过真实执行生成轨迹。升级后以当前帮助与实际验证为准。
+
+参考：本机 Playground 0.1.40 的 `submit --help`、轨迹校验和提交实现，以及 Playground `GET /api/docs/compete-and-submit`，核对日期 2026-10-20。具体比赛是否仍在进行以比赛页为准，题目 open 状态不等于赛事报名仍开放。
