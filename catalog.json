@@ -4,37 +4,46 @@
   "timezone": "Asia/Shanghai",
   "solutions": [
     {
-      "id": "electromagnetic-field-profile-and-energy-accumulat-f506322a",
-      "title": "Electromagnetic Field Profile and Energy Accumulation in Cholesteric Liquid Crystals",
+      "id": "f-rster-resonance-energy-transfer-efficiency-calcu-4fff2cf6",
+      "title": "Förster Resonance Energy Transfer Efficiency Calculation for Engineered Fluorescent Protein Fusions",
       "category": "liquid-crystals-optics",
-      "source_url": "https://play.bohrium.com/challenge/electromagnetic-field-profile-and-energy-accumulat-f506322a",
+      "source_url": "https://play.bohrium.com/challenge/f-rster-resonance-energy-transfer-efficiency-calcu-4fff2cf6",
       "listed_status": "open",
       "status": "planned",
       "solution_path": null,
       "attempt_id": null,
-      "final_score": null
+      "final_score": null,
+      "recommended_order": 1,
+      "statement_reviewed_on": "2026-10-20",
+      "scoring_strategy_at_review": "human_review_only"
     },
     {
-      "id": "liquid-crystal-cell-filling-time-simulation-6a87bbdd",
-      "title": "Liquid Crystal Cell Filling Time Simulation",
+      "id": "distance-dependent-fluorescence-quenching-model-fi-536026a1",
+      "title": "Distance-Dependent Fluorescence Quenching Model Fitting",
       "category": "liquid-crystals-optics",
-      "source_url": "https://play.bohrium.com/challenge/liquid-crystal-cell-filling-time-simulation-6a87bbdd",
+      "source_url": "https://play.bohrium.com/challenge/distance-dependent-fluorescence-quenching-model-fi-536026a1",
       "listed_status": "open",
       "status": "planned",
       "solution_path": null,
       "attempt_id": null,
-      "final_score": null
+      "final_score": null,
+      "recommended_order": 2,
+      "statement_reviewed_on": "2026-10-20",
+      "scoring_strategy_at_review": "human_review_only"
     },
     {
-      "id": "uniaxial-viscoelastic-polymer-response-simulation-00c4363d",
-      "title": "Uniaxial Viscoelastic Polymer Response Simulation",
-      "category": "polymers-mechanics",
-      "source_url": "https://play.bohrium.com/challenge/uniaxial-viscoelastic-polymer-response-simulation-00c4363d",
+      "id": "fret-relative-fluorescence-yield-calculation-53a91b6e",
+      "title": "FRET Relative Fluorescence Yield Calculation",
+      "category": "liquid-crystals-optics",
+      "source_url": "https://play.bohrium.com/challenge/fret-relative-fluorescence-yield-calculation-53a91b6e",
       "listed_status": "open",
       "status": "planned",
       "solution_path": null,
       "attempt_id": null,
-      "final_score": null
+      "final_score": null,
+      "recommended_order": 3,
+      "statement_reviewed_on": "2026-10-20",
+      "scoring_strategy_at_review": "human_review_only"
     },
     {
       "id": "compute-spinodal-temperatures-and-ucst-critical-mi-628b34e4",
@@ -45,7 +54,52 @@
       "status": "planned",
       "solution_path": null,
       "attempt_id": null,
-      "final_score": null
+      "final_score": null,
+      "recommended_order": 4,
+      "statement_reviewed_on": "2026-10-20",
+      "scoring_strategy_at_review": "human_review_only"
+    },
+    {
+      "id": "uniaxial-viscoelastic-polymer-response-simulation-00c4363d",
+      "title": "Uniaxial Viscoelastic Polymer Response Simulation",
+      "category": "polymers-mechanics",
+      "source_url": "https://play.bohrium.com/challenge/uniaxial-viscoelastic-polymer-response-simulation-00c4363d",
+      "listed_status": "open",
+      "status": "planned",
+      "solution_path": null,
+      "attempt_id": null,
+      "final_score": null,
+      "recommended_order": 5,
+      "statement_reviewed_on": "2026-10-20",
+      "scoring_strategy_at_review": "human_review_only"
+    },
+    {
+      "id": "electromagnetic-field-profile-and-energy-accumulat-f506322a",
+      "title": "Electromagnetic Field Profile and Energy Accumulation in Cholesteric Liquid Crystals",
+      "category": "liquid-crystals-optics",
+      "source_url": "https://play.bohrium.com/challenge/electromagnetic-field-profile-and-energy-accumulat-f506322a",
+      "listed_status": "open",
+      "status": "planned",
+      "solution_path": null,
+      "attempt_id": null,
+      "final_score": null,
+      "recommended_order": 6,
+      "statement_reviewed_on": "2026-10-20",
+      "scoring_strategy_at_review": "human_review_only"
+    },
+    {
+      "id": "liquid-crystal-cell-filling-time-simulation-6a87bbdd",
+      "title": "Liquid Crystal Cell Filling Time Simulation",
+      "category": "liquid-crystals-optics",
+      "source_url": "https://play.bohrium.com/challenge/liquid-crystal-cell-filling-time-simulation-6a87bbdd",
+      "listed_status": "open",
+      "status": "planned",
+      "solution_path": null,
+      "attempt_id": null,
+      "final_score": null,
+      "recommended_order": 7,
+      "statement_reviewed_on": "2026-10-20",
+      "scoring_strategy_at_review": "human_review_only"
     }
   ]
 }
