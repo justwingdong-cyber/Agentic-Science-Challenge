@@ -12,6 +12,8 @@ python scripts/asc_agent.py run --challenge-id f-rster-resonance-energy-transfer
 
 工作目录为 `asc-work/<challenge_id>/`。题包需预先下载。入口接受 `task/instruction.md` 或当前 CLI 实际生成的 `task/task.md`，从公开题面提取 outputs JSON 契约。
 
+如果题目依赖 NumPy/SciPy，先为该题准备独立环境，再用该环境的 Python 启动 runner；runner 会把实际解释器路径传给 Agent，避免误用缺少依赖的系统 Python。
+
 最小闭环：读取公开题面 → `codex exec --json` 实际推理和工具执行 → 产出脚本与答案 → 本地契约校验 → 保存轨迹、运行日志和状态。模型沿用当前 Codex 配置；需要固定实际模型时使用 `--model <真实模型标识>`。runner 只记录 requested_model，不将配置继承冒充型号已核实。
 
 | 文件 | 内容 |

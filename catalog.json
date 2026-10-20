@@ -33,13 +33,22 @@
       "category": "liquid-crystals-optics",
       "source_url": "https://play.bohrium.com/challenge/distance-dependent-fluorescence-quenching-model-fi-536026a1",
       "listed_status": "open",
-      "status": "planned",
-      "solution_path": null,
+      "status": "local-validated",
+      "solution_path": "solutions/liquid-crystals-optics/distance-dependent-fluorescence-quenching-model-fi-536026a1",
       "attempt_id": null,
       "final_score": null,
       "recommended_order": 2,
       "statement_reviewed_on": "2026-10-20",
-      "scoring_strategy_at_review": "human_review_only"
+      "scoring_strategy_at_review": "human_review_only",
+      "local_workspace": "asc-work/distance-dependent-fluorescence-quenching-model-fi-536026a1",
+      "validation_evidence": [
+        "logs/verification.json",
+        "logs/host-independent-check.json",
+        "logs/reproducibility.json",
+        "logs/trace-validation.json"
+      ],
+      "model": "gpt-6-astra",
+      "harness": "codex"
     },
     {
       "id": "fret-relative-fluorescence-yield-calculation-53a91b6e",
