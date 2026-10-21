@@ -22,10 +22,14 @@
         "logs/reproducibility.json",
         "logs/trace-validation.json"
       ],
-      "platform_status": "queued",
+      "platform_status": "submitted",
       "model": "gpt-6-astra",
       "harness": "codex",
-      "last_status_checked_at": "2026-10-20T00:59:38.610415+00:00"
+      "last_status_checked_at": "2026-10-21T10:13:34.008667+00:00",
+      "scoring_state": "evaluating",
+      "worker_status": "evaluation_failed",
+      "operator_id": "justwingdong",
+      "operator_confirmed": true
     },
     {
       "id": "distance-dependent-fluorescence-quenching-model-fi-536026a1",
@@ -49,8 +53,13 @@
       ],
       "model": "gpt-6-astra",
       "harness": "codex",
-      "platform_status": "queued",
-      "last_status_checked_at": "2026-10-20T05:13:49.344361+00:00"
+      "platform_status": "pending_review",
+      "last_status_checked_at": "2026-10-21T10:13:34.008667+00:00",
+      "scoring_state": "unknown",
+      "worker_status": null,
+      "operator_id": "justwingdong",
+      "operator_confirmed": true,
+      "review_note": "【已受理 · 转人工评审】该题后续将由人工评审，无需重复提交（平台资源有限，自动评分暂不可用）。"
     },
     {
       "id": "fret-relative-fluorescence-yield-calculation-53a91b6e",
