@@ -130,6 +130,26 @@
       "recommended_order": 7,
       "statement_reviewed_on": "2026-10-20",
       "scoring_strategy_at_review": "human_review_only"
+    },
+    {
+      "id": "modified-fermi-integral-for-band-tails-in-semicond-ba32d5e5",
+      "title": "Modified Fermi Integral for Band Tails in Semiconductors",
+      "category": "semiconductors",
+      "status": "submitted",
+      "local_workspace": "asc-work/modified-fermi-integral-for-band-tails-in-semicond-ba32d5e5",
+      "solution_path": "solutions/semiconductors/modified-fermi-integral-for-band-tails-in-semicond-ba32d5e5",
+      "attempt_id": "59201",
+      "final_score": null,
+      "source_url": "https://play.bohrium.com/challenge/modified-fermi-integral-for-band-tails-in-semicond-ba32d5e5",
+      "validation_evidence": [
+        "logs/validation.json",
+        "logs/run.json",
+        "logs/review.md"
+      ],
+      "model": "gpt-6.1-sol",
+      "harness": "codex",
+      "operator_id": "justwingdong",
+      "operator_confirmed": true
     }
   ]
 }
