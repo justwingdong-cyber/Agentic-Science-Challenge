@@ -2,7 +2,7 @@
 
 面向材料科学与 AI for Science 的题解、计算复现和经验总结。维护者：[@justwingdong-cyber](https://github.com/justwingdong-cyber)。
 
-本仓库记录真实执行过程，区分计划、实现、本地验证与平台评分。当前 **2 道题通过本地独立验证，两题均已提交，等待评分**；平台最终成绩仍未知。
+本仓库记录真实执行过程，区分计划、实现、本地验证与平台评分。当前 **3 道题通过本地独立验证并已提交**；平台最终成绩仍未知。部分任务转人工评审，部分自动评测工作进程失败，详见 catalog.json 中最近记录；不将中间值 0 当作最终得分。
 
 ## 最简 Agent
 
@@ -19,6 +19,7 @@ python scripts/asc_agent.py run --challenge-id f-rster-resonance-energy-transfer
 | 目录 | 内容 |
 |---|---|
 | [液晶与光学](solutions/liquid-crystals-optics/README.md) | 胆甾相液晶、光传播、液晶器件 |
+| [半导体](solutions/semiconductors/README.md) | 带尾、载流子统计、电子结构与光电材料 |
 | [聚合物与力学](solutions/polymers-mechanics/README.md) | 黏弹性、本构模型、相行为 |
 | [材料计算](solutions/materials-simulation/README.md) | DFT、MD、材料性质与结构 |
 | [机器学习与优化](solutions/ml-optimization/README.md) | 主动学习、逆向设计、多目标优化 |
@@ -32,6 +33,7 @@ python scripts/asc_agent.py run --challenge-id f-rster-resonance-energy-transfer
 |---|---|---|
 | FRET 效率与寿命计算 | 液晶与光学 | 已提交，attempt 57926，等待评分 |
 | [距离依赖的荧光猝灭拟合](solutions/liquid-crystals-optics/distance-dependent-fluorescence-quenching-model-fi-536026a1/README.md) | 液晶与光学 | 已提交，attempt 57967，等待评分 |
+| [半导体带尾修正费米积分](solutions/semiconductors/modified-fermi-integral-for-band-tails-in-semicond-ba32d5e5/README.md) | 半导体 | 已提交，attempt 59201，最终得分未知 |
 | FRET 相对荧光产率计算 | 液晶与光学 | 待开始 |
 | 聚合物溶液旋节温度与 UCST 临界点计算 | 聚合物与力学 | 待开始 |
 | 聚合物单轴黏弹性响应模拟 | 聚合物与力学 | 待开始 |
